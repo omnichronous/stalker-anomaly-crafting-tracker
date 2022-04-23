@@ -5,7 +5,6 @@ module.exports = defineConfig({
   ],
   runtimeCompiler: true,
   productionSourceMap: false,
-
   css: {
     sourceMap: true,
   },

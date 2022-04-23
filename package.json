@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "serve": "vue-cli-service serve --no-open",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
@@ -32,6 +32,7 @@
     "sass-loader": "^12.0.0",
     "vue-cli-plugin-vuetify": "~2.4.8",
     "vue-template-compiler": "^2.6.14",
-    "vuetify-loader": "^1.7.0"
+    "vuetify-loader": "^1.7.0",
+    "vuex-persist": "^3.1.3"
   }
 }

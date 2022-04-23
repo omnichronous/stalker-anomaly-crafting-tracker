@@ -3,6 +3,7 @@
     <v-data-table
       :headers="headers"
       :items="items"
+      :options.sync="dataTableOptions"
       item-key="name"
       class="elevation-1"
     >
@@ -103,11 +104,27 @@ export default {
   },
 
   computed: {
-    ...mapState(['quantities']),
+    ...mapState({
+      quantities: (state) => state.quantities,
+      componentsDataTableOptions: (state) => state.dataTableOptions.components,
+    }),
+
+    dataTableOptions: {
+      get () {
+        return this.componentsDataTableOptions
+      },
+      set (options) {
+        return this.SET_DATA_TABLE_OPTIONS({
+          scope: 'components',
+          options,
+        })
+      },
+    },
   },
 
   methods: {
-    ...mapMutations(['SET_QUANTITIES']),
+    ...mapMutations(['SET_QUANTITIES', 'SET_DATA_TABLE_OPTIONS']),
+
     parseData (items) {
       const descriptionMarker = '_descr'
       const nameObjects = filter(items, (item) => !endsWith(item['@id'], descriptionMarker))

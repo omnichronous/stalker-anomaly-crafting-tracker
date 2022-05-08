@@ -6,7 +6,8 @@
     "serve": "vue-cli-service serve --no-open",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "convert:items": "node ./tools/convertItems.mjs"
+    "convert:items": "node ./tools/convertItems.mjs",
+    "combine:items": "node ./tools/combineItems.mjs"
   },
   "dependencies": {
     "core-js": "^3.8.3",
@@ -24,6 +25,7 @@
     "@vue/cli-plugin-vuex": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
     "@vue/eslint-config-standard": "^6.1.0",
+    "combine-json": "^1.0.0",
     "dotenv": "^16.0.0",
     "eslint": "^7.32.0",
     "eslint-plugin-import": "^2.25.3",

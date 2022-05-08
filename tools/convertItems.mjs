@@ -8,6 +8,7 @@ const itemsPath = '/configs/configs/items'
 const inputBaseDir = process.env.GAMEDATA_INPUT
 const inputDir = inputBaseDir + itemsPath
 const outputBaseDir = process.env.GAMEDATA_OUTPUT
+const outputDirItems = outputBaseDir + itemsPath
 
 const files = await readdir(inputDir, ['**base**'])
 
@@ -21,7 +22,7 @@ function generateOutputPath (filePath) {
   const relativePath = path.relative(inputDir, filePath)
   const relativeDirName = path.dirname(relativePath)
   const fileName = path.basename(relativePath, path.extname(relativePath))
-  const outputDir = path.join(outputBaseDir, relativeDirName)
+  const outputDir = path.join(outputDirItems, relativeDirName)
   const outputPath = path.format({
     dir: outputDir,
     name: fileName,

@@ -5,7 +5,9 @@
   "scripts": {
     "serve": "vue-cli-service serve --no-open",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "convert:items": "node ./tools/convertItems.mjs",
+    "combine:items": "node ./tools/combineItems.mjs"
   },
   "dependencies": {
     "core-js": "^3.8.3",
@@ -23,11 +25,15 @@
     "@vue/cli-plugin-vuex": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
     "@vue/eslint-config-standard": "^6.1.0",
+    "combine-json": "^1.0.0",
+    "dotenv": "^16.0.0",
     "eslint": "^7.32.0",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-vue": "^8.0.3",
+    "fs-extra": "^10.1.0",
+    "recursive-readdir": "^2.2.2",
     "sass": "^1.32.7",
     "sass-loader": "^12.0.0",
     "vue-cli-plugin-vuetify": "~2.4.8",

@@ -9,7 +9,8 @@
     "convert:items": "node ./tools/convertItems.mjs",
     "combine:items": "node ./tools/combineItems.mjs",
     "convert:texts": "node ./tools/convertTexts.mjs",
-    "combine:texts": "node ./tools/combineTexts.mjs"
+    "combine:texts": "node ./tools/combineTexts.mjs",
+    "convert:recipes": "node ./tools/convertRecipes.mjs"
   },
   "dependencies": {
     "core-js": "^3.8.3",

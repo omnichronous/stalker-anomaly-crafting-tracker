@@ -8,6 +8,7 @@
     "lint": "vue-cli-service lint",
     "convert:items": "node ./tools/convertItems.mjs",
     "combine:items": "node ./tools/combineItems.mjs",
+    "parse:items": "node ./tools/parseItems.mjs",
     "convert:texts": "node ./tools/convertTexts.mjs",
     "combine:texts": "node ./tools/combineTexts.mjs",
     "convert:recipes": "node ./tools/convertRecipes.mjs"
@@ -15,6 +16,7 @@
   "dependencies": {
     "core-js": "^3.8.3",
     "vue": "^2.6.14",
+    "vue-i18n": "^8.27.1",
     "vue-router": "^3.5.1",
     "vuetify": "^2.6.0",
     "vuex": "^3.6.2"
@@ -29,12 +31,14 @@
     "@vue/cli-service": "~5.0.0",
     "@vue/eslint-config-standard": "^6.1.0",
     "combine-json": "^1.0.0",
+    "deepdash-es": "^5.3.9",
     "dotenv": "^16.0.0",
     "eslint": "^7.32.0",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-vue": "^8.0.3",
+    "flat": "^5.0.2",
     "fs-extra": "^10.1.0",
     "recursive-readdir": "^2.2.2",
     "sass": "^1.32.7",

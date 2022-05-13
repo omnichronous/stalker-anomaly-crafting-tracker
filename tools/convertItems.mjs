@@ -4,7 +4,7 @@ import path from 'path'
 import readdir from 'recursive-readdir'
 import ltxToJson from './utils/ltxToJson.mjs'
 
-const itemsPath = '/configs/configs/items'
+const itemsPath = '/configs/items'
 const inputBaseDir = process.env.GAMEDATA_INPUT
 const inputDir = inputBaseDir + itemsPath
 const outputBaseDir = process.env.GAMEDATA_OUTPUT

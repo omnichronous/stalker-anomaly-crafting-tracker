@@ -4,13 +4,15 @@ import path from 'path'
 import readdir from 'recursive-readdir'
 import xml2js from 'xml2js'
 
-const textsPath = '/configs/configs/text/eng'
+const textsPath = '/configs/text/eng'
 const inputBaseDir = process.env.GAMEDATA_INPUT
 const inputDir = inputBaseDir + textsPath
 const outputBaseDir = process.env.GAMEDATA_OUTPUT
 const outputDirTexts = outputBaseDir + textsPath
 
-const files = await readdir(inputDir, ['!st_items**'])
+const files = await readdir(inputDir, [function (file) {
+  return !/(?:st_items.*|ui_st_inventory.*)/.test(file)
+}])
 
 console.time('Files converted')
 for (const filePath of files) {

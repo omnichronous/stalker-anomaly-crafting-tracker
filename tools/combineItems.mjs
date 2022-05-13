@@ -3,10 +3,10 @@ import fs from 'fs-extra'
 import { combine } from 'combine-json'
 import path from 'path'
 
-const itemsPath = '/configs/configs/items'
+const itemsPath = '/configs/items'
 const inputBaseDir = process.env.GAMEDATA_OUTPUT
 const inputDir = inputBaseDir + itemsPath
-const outputDir = process.env.COMBINED_OUTPUT
+const outputDir = process.env.GAMEDATA_OUTPUT
 const outputPath = path.format({
   dir: outputDir,
   name: 'items',

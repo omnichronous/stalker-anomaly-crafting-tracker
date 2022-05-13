@@ -3,7 +3,7 @@ import fs from 'fs-extra'
 import path from 'path'
 import ltxToJson from './utils/ltxToJson.mjs'
 
-const inputRelativeFilePath = '/configs/configs/items/settings/craft.ltx'
+const inputRelativeFilePath = '/configs/items/settings/craft.ltx'
 const inputBaseDir = process.env.GAMEDATA_INPUT
 const inputFilePath = inputBaseDir + inputRelativeFilePath
 const outputBaseDir = './src/gamedata'

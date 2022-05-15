@@ -1,6 +1,7 @@
 import { filterDeep, reduceDeep } from 'deepdash-es/standalone'
 import 'dotenv/config'
 import fs from 'fs-extra'
+import _ from 'lodash'
 import path from 'path'
 
 const inputBaseDir = process.env.GAMEDATA_OUTPUT
@@ -20,7 +21,11 @@ const parsed = reduceDeep(
   filterDeep(
     items,
     (_value, key, _parent) => {
-      if (key.includes('inv_')) return true
+      const isItemValid = _.some([
+        'inv_',
+        'description',
+      ], (keyword) => key.includes(keyword))
+      if (isItemValid) return true
     // if (parent.inv_name) return true
     },
   ),

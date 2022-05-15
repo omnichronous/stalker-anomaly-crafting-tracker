@@ -9,7 +9,7 @@ export default function parseCraftManifest (manifest) {
       (result, recipe, product) => {
         result.push({
           ...parseRecipe(recipe),
-          name: product.replace('x_', ''),
+          id: product.replace('x_', ''),
           category,
         })
       },

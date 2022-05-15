@@ -11,13 +11,13 @@
     "parse:items": "node ./tools/parseItems.mjs",
     "convert:texts": "node ./tools/convertTexts.mjs",
     "combine:texts": "node ./tools/combineTexts.mjs",
+    "parse:texts": "node ./tools/parseTexts.mjs",
     "convert:recipes": "node ./tools/convertRecipes.mjs",
     "parse:recipes": "node ./tools/parseRecipes.mjs"
   },
   "dependencies": {
     "core-js": "^3.8.3",
     "vue": "^2.6.14",
-    "vue-i18n": "^8.27.1",
     "vue-router": "^3.5.1",
     "vuetify": "^2.6.0",
     "vuex": "^3.6.2"

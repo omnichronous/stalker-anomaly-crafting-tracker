@@ -1,16 +1,15 @@
+import { combine } from 'combine-json'
 import 'dotenv/config'
 import fs from 'fs-extra'
-import { combine } from 'combine-json'
 import path from 'path'
-import _ from 'lodash'
 
 const textsPath = '/configs/text/eng'
 const inputBaseDir = process.env.GAMEDATA_OUTPUT
 const inputDir = inputBaseDir + textsPath
-const outputDir = './src/locales'
+const outputDir = process.env.GAMEDATA_OUTPUT
 const outputPath = path.format({
   dir: outputDir,
-  name: 'en',
+  name: 'texts',
   ext: '.json',
 })
 
@@ -19,15 +18,5 @@ await fs.ensureFile(outputPath)
 
 console.time('Files combined')
 const combined = await combine(inputDir)
-const flattened = flatten(combined)
-fs.outputJson(outputPath, flattened)
+fs.outputJson(outputPath, combined)
 console.timeEnd('Files combined')
-
-function flatten (texts) {
-  return _(texts)
-    .map('STRING_TABLE.STRING')
-    .flatten()
-    .map((item) => [item.$.ID, item.TEXT[0]])
-    .fromPairs()
-    .value()
-}

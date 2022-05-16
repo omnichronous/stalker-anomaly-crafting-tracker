@@ -16,7 +16,7 @@ export default function (input) {
       const sectionLines = lines.slice(sectionStartIndex + 1, sectionEndIndex)
       const sanitizedSectionLines = sectionLines.map((line) => line.replace(/[\t\r\s]/g, ''))
       const keyValueLines = sanitizedSectionLines.filter((line) => line.split('=').length === 2)
-      const uncommentedKeyValueLines = keyValueLines.filter((line) => !line.startsWith(';'))
+      const uncommentedKeyValueLines = keyValueLines.filter((line) => !line.startsWith(';') || line.startsWith(';inv_name'))
       const parsedKeyValuePairs = transform(
         uncommentedKeyValueLines,
         (jsonResult, line) => {

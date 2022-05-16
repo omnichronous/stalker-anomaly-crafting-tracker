@@ -6,7 +6,7 @@ import ltxToJson from './utils/ltxToJson.mjs'
 const inputRelativeFilePath = '/configs/items/settings/craft.ltx'
 const inputBaseDir = process.env.GAMEDATA_INPUT
 const inputFilePath = inputBaseDir + inputRelativeFilePath
-const outputBaseDir = './src/gamedata'
+const outputBaseDir = process.env.GAMEDATA_OUTPUT
 
 console.time('Recipes converted')
 convertFile(inputFilePath)
